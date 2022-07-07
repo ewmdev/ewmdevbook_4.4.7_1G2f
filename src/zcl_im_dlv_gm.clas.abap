@@ -27,7 +27,7 @@ CLASS ZCL_IM_DLV_GM IMPLEMENTATION.
       "Check if current item is completely packed
       DATA(ls_status) = VALUE #( <item>-status[
         status_type = /scdl/if_dl_status_c=>sc_t_packing ] OPTIONAL ).
-      IF ls_status IS NOT INITIAL
+      IF ls_status IS INITIAL
       OR ls_status-status_value NE /scdl/if_dl_status_c=>sc_v_finished.
         "Delivery &1 item &2 not fully packed. GM not allowed.
         MESSAGE e001(zewmdevbook_447)
@@ -35,11 +35,11 @@ CLASS ZCL_IM_DLV_GM IMPLEMENTATION.
         DATA(ls_symsg) = /scwm/cl_dm_message_no=>get_symsg_fields( ).
         "Issue message
         co_message->add_message(
-        iv_msgcat = /scdl/cl_dm_message=>sc_mcat_bus
-        iv_doccat = <item>-doccat
-        iv_docid  = <item>-docid
-        iv_itemid = <item>-itemid
-        is_symsg  = ls_symsg ).
+          iv_msgcat = /scdl/cl_dm_message=>sc_mcat_bus
+          iv_doccat = <item>-doccat
+          iv_docid  = <item>-docid
+          iv_itemid = <item>-itemid
+          is_symsg  = ls_symsg ).
       ENDIF.
     ENDLOOP.
 
