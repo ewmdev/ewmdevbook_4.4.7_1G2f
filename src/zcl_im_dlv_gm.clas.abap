@@ -18,7 +18,7 @@ CLASS ZCL_IM_DLV_GM IMPLEMENTATION.
 
   METHOD /scwm/if_ex_dlv_gm_process~check_document.
 
-    BREAK-POINT ID zewmdevbook_447.
+    BREAK-POINT ID zewmdevbook_1g2f.
 
     "Check if goods issue is being processed
     CHECK iv_gmcat = /scwm/if_docflow_c=>sc_gi.
@@ -30,7 +30,7 @@ CLASS ZCL_IM_DLV_GM IMPLEMENTATION.
       IF ls_status IS INITIAL
       OR ls_status-status_value NE /scdl/if_dl_status_c=>sc_v_finished.
         "Delivery &1 item &2 not fully packed. GM not allowed.
-        MESSAGE e001(zewmdevbook_447)
+        MESSAGE e001(zewmdevbook_1g2f)
         WITH <item>-docno <item>-itemno INTO DATA(lv_msg).
         DATA(ls_symsg) = /scwm/cl_dm_message_no=>get_symsg_fields( ).
         "Issue message
