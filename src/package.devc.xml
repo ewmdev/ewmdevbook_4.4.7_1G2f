@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <DEVC>
-    <CTEXT>Chapter 447 Prohibit GI for Incomplete Packing</CTEXT>
+    <CTEXT>Enhancement 1G2f: Prohibit GI for Incomplete Packing</CTEXT>
    </DEVC>
   </asx:values>
  </asx:abap>
